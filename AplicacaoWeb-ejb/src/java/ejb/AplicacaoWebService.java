@@ -30,6 +30,12 @@ public class AplicacaoWebService {
         em.merge(object);
     }
     
+//    public Funcionarios seleciona(String tipoUsuario){
+//        Funcionarios f = (Funcionarios)em.createQuery("SELECT f FROM "+tipoUsuario+" f where f.id =:id")
+//                .setParameter("id", id).getSingleResult();
+//        return f;
+//    }
+    
     public Funcionarios buscaFuncionario(Integer id){
         Funcionarios f = (Funcionarios)em.createQuery("SELECT f FROM Funcionarios f where f.id =:id")
                 .setParameter("id", id).getSingleResult();
@@ -48,11 +54,11 @@ public class AplicacaoWebService {
         return consultas;
     }
     
-    public ArrayList<Consultas> buscaConsultasMarcadas(Integer id){
-        ArrayList<Consultas> consultas = (ArrayList<Consultas>)em.createQuery("SELECT c FROM Consultas c where c.codpac =:codpac")
-                .setParameter("codpac", id).getResultList();
-        return consultas;
-    }
+//    public ArrayList<Consultas> buscaConsultasMarcadas(Integer id){
+//        ArrayList<Consultas> consultas = (ArrayList<Consultas>)em.createQuery("SELECT c FROM Consultas c where c.codpac =:codpac")
+//                .setParameter("codpac", id).getResultList();
+//        return consultas;
+//    }
     
     public ArrayList<Consultas> pesquisaConsultas(Consultas c){
          ArrayList<Consultas> consultas = (ArrayList<Consultas>)em.createQuery("SELECT c FROM Consultas c order by hora")
